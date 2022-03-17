@@ -5,7 +5,7 @@
     <li class="${page.isActive ? 'active' : '' }"><a load.bind="page.link">Actived ${page.name}</a></li>
   </ul>
 
-  
-      <au-compose repeat.for="page of activePages" show.bind="page.isActive" view-model.bind="page.view"></au-compose>
-  
+
+  <au-compose repeat.for="page of activePages" show.bind="page.isActive" view-model.bind="page.view"></au-compose>
+
 </div>

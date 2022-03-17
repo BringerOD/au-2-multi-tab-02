@@ -11,11 +11,18 @@ export class shell implements IRouteViewModel {
   constructor(private pageFinder: PageFinder) {}
 
   async load(params: Params, next: RouteNode, current: RouteNode) {
-    console.log(params);
 
+    console.log(`Shell Load Called with module: ${params.module} page: ${ params.page}`);
+    
     var existing = this.activePages.find((x) => x.module === params.module && x.page == params.page);
-    console.log(existing);
 
+    if (existing) {
+      console.log(`Existing page found with module: ${params.module} page: ${ params.page}`);
+      console.log(existing);
+    }
+    
+
+    console.log(`Setting existing pages to inactive  count: ${ this.activePages.length}`);
     for (const page of this.activePages) {
       page.isActive = false;
     }
@@ -38,7 +45,7 @@ export class shell implements IRouteViewModel {
 
     this.activePages.push(newPage);
 
-   
+    console.log(`Page Added to collection count: ${ this.activePages.length}`);
     console.log(this.activePages);
   }
 
