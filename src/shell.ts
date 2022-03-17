@@ -40,7 +40,7 @@ export class shell implements IRouteViewModel {
       module: params.module!,
       page: params.page!,
       view: route?.view,
-      link: "shell/" + params.module! + "/" + params.page!,
+      link: "#shell/" + params.module! + "/" + params.page!,
       isActive: true,
     };
 
