@@ -1,7 +1,8 @@
-import { Params, RouteNode, bindable, IRouteViewModel } from "aurelia";
+import { Params, RouteNode, bindable, IRouteViewModel, singleton } from "aurelia";
 
 import { PageFinder } from "./pageFinder";
 
+@singleton()
 export class shell implements IRouteViewModel {
   @bindable() view: any | undefined = undefined;
 
